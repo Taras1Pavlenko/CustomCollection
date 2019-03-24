@@ -24,10 +24,29 @@ namespace CustomCollection
 
         public bool MoveNext()
         {
-            bool flag = true;
-            if (position < array.Length - 1)
+            if (position < array.Length-1)
             {
                 position++;
+            }
+            else
+            {
+                return false;
+            }
+            return IsPrimeNumber(array[position]);
+
+        }
+
+
+        public void Reset()
+        {
+            position = -1;
+        }
+
+        private bool IsPrimeNumber(int v)
+        {
+            bool flag = true;
+            if (position < array.Length)
+            {
                 while (!CheckPrime(array[position]))
                 {
                     if (position < array.Length - 1)
@@ -46,14 +65,7 @@ namespace CustomCollection
             {
                 return false;
             }
-
         }
-
-        public void Reset()
-        {
-            position = -1;
-        }
-
         private bool CheckPrime(int number)
         {
             var boundary = (int)Math.Floor(Math.Sqrt(number));

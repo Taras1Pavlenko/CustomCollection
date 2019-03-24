@@ -13,7 +13,7 @@ namespace CustomCollection
 
         public IEnumerator GetEnumerator()
         {
-            return new PrimeNumbersEnumerator(this.array);
+            return new PrimeNumbersEnumerator(array);
         }
     }
 
